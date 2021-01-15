@@ -240,7 +240,7 @@ Window {
             varying highp vec2 coord;
             uniform sampler2D src;
             uniform highp vec2 off;
-            uniform highp bool maxIntens;
+            uniform bool maxIntens;
             uniform lowp float qt_Opacity;
             void main() {
                 lowp vec4 tex1 = texture2D(src, coord);
