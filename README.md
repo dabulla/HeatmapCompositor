@@ -11,9 +11,9 @@ Try the Qt 5.15.2 WebAssembly build (wasm) at https://dabulla.github.io/HeatmapC
 
 Buttons on the top left can be dragged and dropped to change the order of execution. The processing order is top down. The blend step can be manipulated using the mouse (can be enabled with the option on the right side).
 
-![alt text](https://github.com/dabulla/HeatmapCompositor/blob/master/HeatmapCompositor.png?raw=true)
+![alt text](https://github.com/dabulla/HeatmapCompositor/blob/master/HeatmapCompositor.gif?raw=true)
 
-UI is compatible with touch and the program can be compiled under android.
+UI is compatible with touch and the program can be compiled for android.
 
 # License
 

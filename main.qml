@@ -88,7 +88,7 @@ Window {
                 bottom: parent.bottom
                 margins: 2
             }
-            width: 200
+            width: 240
 
             model: ObjectModel {
                 id: visualModel
@@ -101,7 +101,7 @@ Window {
                 }
                 ImageFilterOption {
                     id: itemTrans
-                    name: "Tranferfunction"
+                    name: "Transferfunction"
                     property var img: elemTrans
                 }
                 ImageFilterOption {
@@ -256,12 +256,36 @@ Window {
             }"
     }
     component ImageFilterOption: DraggableItem {
+        id: filterRoot
         property string name
         property bool enableEffect: false
         RowLayout {
             id: row
             anchors { fill: parent; margins: 2 }
             height: effectSwitch.height
+            Item {
+                id: hamburger
+                property color stripeColor: "lightGray"
+                Layout.alignment: Qt.AlignVCenter
+                Layout.fillHeight: true
+                Layout.preferredWidth: effectSwitch.height
+                ColumnLayout {
+                    anchors.fill: parent
+                    anchors.topMargin: parent.height*0.2
+                    anchors.bottomMargin: parent.height*0.3
+                    anchors.leftMargin: parent.height*0.2
+                    anchors.rightMargin: parent.height*0.2
+                    Repeater {
+                        model: filterRoot.enabled ? 3 : 0
+                        Rectangle {
+                            height: 3
+                            radius: 3
+                            Layout.fillWidth: true
+                            color: Qt.darker(hamburger.stripeColor);
+                        }
+                    }
+                }
+            }
             Label {
                 Layout.alignment: Qt.AlignVCenter
                 text:  name
